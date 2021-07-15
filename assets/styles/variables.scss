@@ -1,0 +1,39 @@
+$bg: #212c35;
+$red: #dd3232;
+$blue: #2F86C5;
+$light_blue: #B4D9F4;
+$border: rgba(#BCBCBC,.5);
+$font: #BEC2C5;
+$font_gray: #444;
+$font_inputs: #444;
+
+$basefont: 'Panton', sans-serif;
+$fontsize: 16;
+$lh: 1.35;
+
+$primary: #205EA4;
+$primary_hover: darken($primary, 5%);
+$primary_active: darken($primary, 10%);
+$gray: #7d878f;
+
+
+//links
+$link: #FFF;
+$link_hover: lighten($primary, 15%);
+
+
+//layout
+$inner: 1245;
+$gutter: 35px;
+$col_gutter: 12px;
+$breakpoints: ("lg":$inner,"md":992,"sm":768,"xs":576,"us":400);
+
+
+@mixin fz($f_size) {
+	font-size: $f_size + px;
+	font-size: $f_size/16 + rem;
+}
+
+@mixin ls($lsp) {
+	letter-spacing: $lsp/1000 + em;
+}

@@ -1,0 +1,143 @@
+.vue-carousel {
+  position: relative;
+  overflow: hidden;
+  height: 505px;
+
+  @media (max-width: 992px) {
+    height: 385px;
+  }
+  @media (max-width: 576px) {
+    height: 515px;
+  }
+}
+.vue-slide {
+  background: rgb(39,56,70);
+  background: linear-gradient(128deg, rgba(39,56,70,1) 0%, rgba(33,44,53,1) 55%, rgba(39,56,70,1) 55%, rgba(33,44,53,1) 100%);
+
+  &-content {
+    height: 505px;
+    padding: 25px 0;
+    justify-content: space-between;
+  }
+
+  &-left {
+    flex: 0 0 55%;
+    max-width: 55%;
+  }
+  &-img {
+    text-align: right;
+  }
+
+  &-title {
+    @include fz(40);
+    color: #FFF;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-txt, &-list {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+
+      @media (max-width: 768px) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  
+  .ui-btn {
+    @media (max-width: 768px) {
+      padding: 0px 40px;
+    }
+  }
+}
+
+.vue-carousel-dots {
+  position: absolute;
+  z-index: 99;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 35px;
+  font-size: 0;
+
+  @media (max-width: 768px) {
+    bottom: 20px;
+  }
+  @media (max-width: 576px) {
+    bottom: auto;
+    left: auto;
+    transform: none;
+    right: 35px;
+    top: 36px;
+  }
+  @media (max-width: 533px) {
+    right: 18px;
+  }
+}
+.vue-carousel-dot {
+  display: inline-block;
+  vertical-align: middle;
+  width: 12px;
+  height: 12px;
+  background: #787878;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0px 8px 5px;
+
+  &:hover, &.active {
+    background: #FFF;
+  }
+  @media (max-width: 576px) {
+    display: block;
+    margin: 0px 0px 12px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .vue-slide {
+    &-content {
+      height: 385px;
+      padding-top: 30px;
+      padding-bottom: 20px;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
+    }
+
+    &-title {
+      @include fz(35);
+    }
+  }
+}//992
+
+@media (max-width: 576px) {
+
+  .vue-slide {
+    &-content {
+      height: 515px;
+      display: block;
+    }
+
+    &-title {
+      @include fz(25);
+      margin-bottom: 20px;
+      padding-right: 30px;
+    }
+
+    &-left {
+      max-width: 100%;
+    }
+
+    &-img {
+      width: 100%;
+    }
+  }
+
+}//576
