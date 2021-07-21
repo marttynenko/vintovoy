@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="feedback-form">
         <div class="ui-title">Подобрать компрессор</div>
-        <form>
+        <form @submit.prevent="submit">
 
           <div class="row">
             <div class="col-xs-6">
@@ -80,8 +80,23 @@ export default {
     }
   },
   methods: {
-    submit() {
-
+    async submit() {
+      try {
+        // console.log(this.form)
+        const response = await fetch('путь к вашему php обработчику', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.form)
+        })
+        // console.log(response)
+        //смотрим ответ, если нужно
+        // const answer = await response.json();
+        // console.log(answer);
+      } catch (err) {
+        console.error('Ошибка:', err);
+      }
     }
   }
 }
